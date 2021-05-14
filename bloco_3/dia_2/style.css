@@ -1,0 +1,33 @@
+h1 {
+    font-family: sans-serif;
+    font-size: 65px;
+    color: orange;
+}
+ul {
+    background-color: palegreen;
+}
+.fundo-cinza {
+    background-color: #555;
+}
+p {
+    font-weight: 600;
+    font-size: 3em;
+    font-style: italic;
+    text-align: center;
+}
+body {
+    font-size: 16px;
+    line-height: 40px;
+}
+ul {
+    text-decoration:underline;
+}
+.yellow-bg {
+    background-color: yellow;
+}
+.red-bg {
+    background-color: red;
+}
+.brown-bg {
+    background-color: brown;
+}
