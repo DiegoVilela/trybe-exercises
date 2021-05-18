@@ -1,37 +1,125 @@
+:root {
+    --azul: #4682B4;
+    --claro: #B0C4DE;
+    --cinza: #555;
+    --branco: #fff;
+}
+
 body {
+    color: var(--cinza);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 60%;
     margin: auto;
+    background-color: var(--claro);
+}
+body > header {
+    text-align: center;
+}
+
+article > header {
+    margin: 0;
+    background-color: var(--azul);
+}
+
+nav {
+    overflow: hidden;
+    background-color: var(--azul);
+}
+nav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+nav a:hover {
+    background-color: var(--branco);
+    color: black;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 h1 {
+    margin: 50px;
+    color: var(--cinza);
     text-align: center;
 }
-header, nav, section {
-    border: 2px solid red;
+
+h2, h3 {
+    margin: 0;
+    padding: 20px;
+    color: var(--branco);
+    background-color: var(--azul);
 }
 
-.aparencia img {
+h2 {
+    margin-bottom: 20px;
+}
+
+section, aside {
+    background-color: var(--branco);
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;;
+}
+
+p, img {
+    margin: 20px;
+}
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin:auto;
+    margin-bottom: 20px;
+}
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+caption {
+    font-weight: bold;
+}
+
+.aparencia img, .visao img {
     width: 200px;
     float: right;
-    margin: 0 0 20px 20px;
 }
 
 .forca img {
     width: 200px;
     float: left;
-    margin: 0 20px 20px 0;
-}
-
-.visao img {
-    width: 200px;
-    float: right;
-    margin-left: 20px;
-    margin: 0 0 20px 20px;
-}
-.aparencia {
-    display: inline-block;
 }
 
 .forca {
     clear: both;
+}
+
+.referencias {
+    line-height: 30px;
+}
+
+@media screen and (max-width: 800px) {
+    body, table {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    nav a {
+        float: none;
+        width: 100%;
+    }
 }
