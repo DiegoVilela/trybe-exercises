@@ -4,7 +4,7 @@ Assuma que o valor de `n` será sempre ímpar.
 */
 
 const base = 13;
-let pad = Math.floor(base / 2); // Ponto no meio da pirâmide
+let pad = Math.floor(base / 2); // Ponto central da pirâmide
 let numSpaces,
     line;
 
