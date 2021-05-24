@@ -34,3 +34,18 @@ function indexOfMin(intArray) {
 
     return intArray.indexOf(minInt);
 }
+
+/*
+4. Crie uma função que receba um `array` de nomes e retorne o nome com a maior quantidade de caracteres.
+*/
+function longgerName(nameArray) {
+    let longestName = nameArray[0]; // Será comparado com todos.
+
+    for (let name of nameArray) {
+        // Se o nome mais longo é menor que o nome atual,
+        // sobrescreva o nome mais longo com o atual.
+        if (longestName.length < name.length) longestName = name;
+    }
+
+    return longestName;
+}
