@@ -13,3 +13,13 @@ function isPalindrome(str) {
 
     return reverse(str) === str;
 }
+
+/*
+2. Crie uma função que receba um `array` de inteiros e retorne o índice do maior valor.
+*/
+
+function indexOfMax(intArray) {
+    let maxInt = Math.max(...intArray);
+
+    return intArray.indexOf(maxInt);
+}
