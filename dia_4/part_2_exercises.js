@@ -91,3 +91,16 @@ function sumAllTill(int) {
 
     return total;
 }
+
+/*
+7. Crie uma função que receba uma `string word` e outra `string ending`.
+Verifique se a string ending é o final da string word . Considere
+que a string ending sempre será menor que a string word .
+*/
+function verificaFimPalavra(word, end) {
+    word = word.trim();
+    end = end.trim();
+
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
+    return word.endsWith(end);
+}
