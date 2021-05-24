@@ -17,7 +17,6 @@ function isPalindrome(str) {
 /*
 2. Crie uma função que receba um `array` de inteiros e retorne o índice do maior valor.
 */
-
 function indexOfMax(intArray) {
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
@@ -27,7 +26,8 @@ function indexOfMax(intArray) {
 }
 
 /*
-3. Crie uma função que receba um `array` de inteiros e retorne o índice do menor valor.
+3. Crie uma função que receba um `array` de 
+inteiros e retorne o índice do menor valor.
 */
 function indexOfMin(intArray) {
     let minInt = Math.min(...intArray);
@@ -36,7 +36,8 @@ function indexOfMin(intArray) {
 }
 
 /*
-4. Crie uma função que receba um `array` de nomes e retorne o nome com a maior quantidade de caracteres.
+4. Crie uma função que receba um `array` de nomes e 
+retorne o nome com a maior quantidade de caracteres.
 */
 function longgerName(nameArray) {
     let longestName = nameArray[0]; // Será comparado com todos.
@@ -48,4 +49,31 @@ function longgerName(nameArray) {
     }
 
     return longestName;
+}
+
+/*
+5. Crie uma função que receba um `array` de inteiros 
+e retorne o inteiro que mais se repete.
+*/
+function mostCommon(intArray) {
+    // Objeto criado dinamicamente no formato [int]: quantidade
+    let count = {}
+
+    for (let i of intArray) {
+        /*
+        Caso o int atual ainda não esteja no objeto count, count[i] + 1
+        será avaliado como `undefined`, que é considerado `false`. Como
+        1 é considerado `true`, a expressão `false || 1` retorna 1, que
+        finalmente é atribuído a count[i]. Funciona como um valor padrão
+        caso a primeira opção retorne `false`.
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR
+        */
+        count[i] = count[i] + 1 || 1;
+    }
+
+    let ints = Object.keys(count);
+    let quantities = Object.values(count);
+    let key = quantities.indexOf(Math.max(...quantities))
+
+    return ints[key];
 }
