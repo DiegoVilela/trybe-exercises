@@ -19,7 +19,18 @@ function isPalindrome(str) {
 */
 
 function indexOfMax(intArray) {
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
     let maxInt = Math.max(...intArray);
 
     return intArray.indexOf(maxInt);
+}
+
+/*
+3. Crie uma função que receba um `array` de inteiros e retorne o índice do menor valor.
+*/
+function indexOfMin(intArray) {
+    let minInt = Math.min(...intArray);
+
+    return intArray.indexOf(minInt);
 }
