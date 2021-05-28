@@ -76,7 +76,12 @@
       divCenterContent.appendChild(pInCenterContent);
 
       const divLeftContent = document.createElement('div');
+      divLeftContent.classList = 'left-content';
       divMainContent.appendChild(divLeftContent);
+
+      const divRightContent = document.createElement('div');
+      divRightContent.classList = 'right-content';
+      divMainContent.appendChild(divRightContent);
     </script>
   </body>
 </html>
