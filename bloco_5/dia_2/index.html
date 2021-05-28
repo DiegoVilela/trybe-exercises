@@ -94,7 +94,8 @@
       for (let n of numbers) {
         li = document.createElement('li');
         li.innerText = n;
-        divRightContent.appendChild(li);
+        ulInRightContent.appendChild(li);
+        divRightContent.appendChild(ulInRightContent);
       }
 
       let h3;
@@ -116,6 +117,12 @@
       divRightContent.style.marginRight = 'auto';
 
       divCenterContent.style.backgroundColor = 'green';
+
+      let rmLi;
+      for (let i = 0; i < 2; i++) {
+        rmLi = ulInRightContent.lastElementChild;
+        ulInRightContent.removeChild(rmLi);
+      }
     </script>
   </body>
 </html>
