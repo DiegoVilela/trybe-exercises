@@ -87,6 +87,15 @@
       img.src = 'https://picsum.photos/200';
       img.className = 'small-image';
       divLeftContent.appendChild(img);
+
+      const numbers = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+      const ulInRightContent = document.createElement('ul');
+      let li;
+      for (let n of numbers) {
+        li = document.createElement('li');
+        li.innerText = n;
+        divRightContent.appendChild(li);
+      }
     </script>
   </body>
 </html>
