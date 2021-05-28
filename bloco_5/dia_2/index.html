@@ -57,13 +57,19 @@
   </head>
   <body>
     <script>
+      const bd = document.body;
+
       const h1 = document.createElement('h1');
       h1.innerText = 'Exercício 5.2 - JavaScript DOM';
-      document.body.appendChild(h1);
+      bd.appendChild(h1);
 
       const divMainContent = document.createElement('div');
       divMainContent.className = 'main-content';
-      document.body.appendChild(divMainContent);
+      bd.appendChild(divMainContent);
+
+      const divCenterContent = document.createElement('div');
+      divCenterContent.className = 'center-content';
+      divMainContent.appendChild(divCenterContent);
     </script>
   </body>
 </html>
