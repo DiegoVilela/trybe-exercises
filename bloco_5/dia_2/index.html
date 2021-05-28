@@ -96,6 +96,13 @@
         li.innerText = n;
         divRightContent.appendChild(li);
       }
+
+      let h3;
+      for (let i = 1; i <= 3; i++) {
+        h3 = document.createElement('h3');
+        h3.innerText = `Header Level Three ${i}`;
+        divMainContent.appendChild(h3);
+      }
     </script>
   </body>
 </html>
