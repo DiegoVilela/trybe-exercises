@@ -5,6 +5,7 @@ window.onload = () => {
   btnHolidays.addEventListener('click', toggleHolidaysBgColor);
   btnFridays.addEventListener('click', toggleFridaysText);
   addEventListenerToAllDays();
+  addEventListenerToAllTasks();  
 }
 
 /** Buttons */
@@ -21,7 +22,7 @@ const holidayElements = document.getElementsByClassName('holiday');
 const fridayElements = document.getElementsByClassName('friday');
 
 const allDays = document.getElementsByClassName('day');
-const tasksDiv = document.getElementsByClassName('my-tasks')[0];
+const tasksContainer = document.getElementsByClassName('my-tasks')[0];
 
 
 function createDaysOfTheWeek() {
@@ -46,9 +47,9 @@ function createMonth(days, holidays, fridays) {
     const dayListItem = document.createElement('li');
     dayListItem.className = 'day';
 
-    if (holidays.includes(day)) dayListItem.className = `${dayListItem.className} holiday`;
+    if (holidays.includes(day)) dayListItem.className += ' holiday';
 
-    if (fridays.includes(day)) dayListItem.className = `${dayListItem.className} friday`;
+    if (fridays.includes(day)) dayListItem.className += ' friday';
 
     dayListItem.innerHTML = day;
     monthDaysList.appendChild(dayListItem);
@@ -138,7 +139,7 @@ function zoomOut(event) {
 function createTask(str) {
   let taskElement = document.createElement('span');
   taskElement.innerText = str;
-  tasksDiv.appendChild(taskElement);
+  tasksContainer.appendChild(taskElement);
 }
 createTask("Study JavaScript");
 
@@ -149,6 +150,27 @@ function createLegend(color) {
   let legendDiv = document.createElement('div');
   legendDiv.className = 'task';
   legendDiv.style.backgroundColor = color;
-  tasksDiv.appendChild(legendDiv);
+  tasksContainer.appendChild(legendDiv);
 }
 createLegend('blue');
+
+
+/** Exercise 9 */
+
+function toggleSelectTask(event) {
+  const taskClicked = event.target;
+
+  if (taskClicked.className.includes('selected')) {
+    taskClicked.className = 'task';
+  } else {
+    taskClicked.className = 'task selected';
+  }
+}
+
+function addEventListenerToAllTasks() {
+  const legendElements = document.getElementsByClassName('task');
+
+  for (let legend of legendElements) {
+    legend.addEventListener('click', toggleSelectTask);
+  }
+}
