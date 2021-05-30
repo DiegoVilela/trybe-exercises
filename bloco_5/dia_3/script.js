@@ -1,10 +1,15 @@
 window.onload = () => {
   createDaysOfTheWeek();
   createMonth(dezDaysList, holidays, fridays);
-  addButtonFeriadosToContainer();
-  addEventListenerToFeriadosBtn();
+  addToBtnContainer(btnHolidays, btnFridays);
+  btnHolidays.addEventListener('click', toggleHolidaysBgColor);
 }
 
+/** Buttons */
+const btnHolidays = createBtnHolidays('Feriados');
+const btnFridays = createBtnFridays('Sexta-feiras');
+
+/** Days */
 const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 const holidays = [24, 25, 31];
 const fridays = [4, 11, 18, 25]
@@ -43,37 +48,42 @@ function createMonth(days, holidays, fridays) {
 
 /** Exercise 2 */
 
-function createButton(str) {
+function createBtnHolidays(str) {
   const btn = document.createElement('button');
   btn.innerText = str;
   btn.id = 'btn-holidays';
   return btn;
 }
 
-function addButtonFeriadosToContainer() {
+function addToBtnContainer(...buttons) {
   const btnContainer = document.getElementsByClassName('buttons-container')[0];
-  btnContainer.appendChild(createButton('Feriados'));
+  for (let i = 0; i < arguments.length; i++) {
+    btnContainer.appendChild(arguments[i]);
+  }
 }
 
-
 /** Exercise 3 */
-
-function addEventListenerToFeriadosBtn() {
-  const btn = document.getElementById('btn-holidays');
+function toggleHolidaysBgColor() {
+  let bgColor = 'green';
   const holidays = document.getElementsByClassName('holiday');
+  const currentBgColor = holidays[0].style.backgroundColor;
 
-  btn.addEventListener('click', () => {
-    let bgColor = 'green';
-    const currentBgColor = holidays[0].style.backgroundColor;
-
-    for (let day of holidays) {
-      if (currentBgColor) {
-        day.style.removeProperty('background-color');
-        day.style.removeProperty('color');
-      } else {
-        day.style.backgroundColor = bgColor;
-        day.style.color = 'white';
-      }
+  for (let day of holidays) {
+    if (currentBgColor) {
+      day.style.removeProperty('background-color');
+      day.style.removeProperty('color');
+    } else {
+      day.style.backgroundColor = bgColor;
+      day.style.color = 'white';
     }
-  });
+  }
+};
+
+/** Exercise 4 */
+
+function createBtnFridays(str) {
+  const btn = document.createElement('button');
+  btn.innerText = str;
+  btn.id = 'btn-friday';
+  return btn;
 }
