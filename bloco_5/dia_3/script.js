@@ -4,6 +4,7 @@ window.onload = () => {
   addToBtnContainer(btnHolidays, btnFridays);
   btnHolidays.addEventListener('click', toggleHolidaysBgColor);
   btnFridays.addEventListener('click', toggleFridaysText);
+  addEventListenerToAllDays();
 }
 
 /** Buttons */
@@ -18,6 +19,8 @@ const fridays = [4, 11, 18, 25]
 /** Special days elements */
 const holidayElements = document.getElementsByClassName('holiday');
 const fridayElements = document.getElementsByClassName('friday');
+
+const allDays = document.getElementsByClassName('day');
 
 
 function createDaysOfTheWeek() {
@@ -108,4 +111,22 @@ function toggleFridaysText() {
       fridayElements[i].innerHTML = newText;
     }
   }
+}
+
+
+/** Exercise 6 */
+
+function addEventListenerToAllDays() {
+  for (let day of allDays) {
+    day.addEventListener('mouseover', zoomIn);
+    day.addEventListener('mouseout', zoomOut);
+  }
+}
+
+function zoomIn(event) {
+  event.target.style.fontSize = '2em';
+}
+
+function zoomOut(event) {
+  event.target.style.removeProperty('font-size');
 }
