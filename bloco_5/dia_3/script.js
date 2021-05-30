@@ -140,5 +140,15 @@ function createTask(str) {
   taskElement.innerText = str;
   tasksDiv.appendChild(taskElement);
 }
-
 createTask("Study JavaScript");
+
+
+/** Exercise 8 */
+
+function createLegend(color) {
+  let legendDiv = document.createElement('div');
+  legendDiv.className = 'task';
+  legendDiv.style.backgroundColor = color;
+  tasksDiv.appendChild(legendDiv);
+}
+createLegend('blue');
