@@ -21,6 +21,7 @@ const holidayElements = document.getElementsByClassName('holiday');
 const fridayElements = document.getElementsByClassName('friday');
 
 const allDays = document.getElementsByClassName('day');
+const tasksDiv = document.getElementsByClassName('my-tasks')[0];
 
 
 function createDaysOfTheWeek() {
@@ -130,3 +131,14 @@ function zoomIn(event) {
 function zoomOut(event) {
   event.target.style.removeProperty('font-size');
 }
+
+
+/** Exercise 7 */
+
+function createTask(str) {
+  let taskElement = document.createElement('span');
+  taskElement.innerText = str;
+  tasksDiv.appendChild(taskElement);
+}
+
+createTask("Study JavaScript");
