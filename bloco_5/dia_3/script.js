@@ -3,6 +3,7 @@ window.onload = () => {
   createMonth(dezDaysList, holidays, fridays);
   addToBtnContainer(btnHolidays, btnFridays);
   btnHolidays.addEventListener('click', toggleHolidaysBgColor);
+  btnFridays.addEventListener('click', toggleFridaysText);
 }
 
 /** Buttons */
@@ -13,6 +14,11 @@ const btnFridays = createBtnFridays('Sexta-feiras');
 const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 const holidays = [24, 25, 31];
 const fridays = [4, 11, 18, 25]
+
+/** Special days elements */
+const holidayElements = document.getElementsByClassName('holiday');
+const fridayElements = document.getElementsByClassName('friday');
+
 
 function createDaysOfTheWeek() {
   const weekDays = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
@@ -62,13 +68,13 @@ function addToBtnContainer(...buttons) {
   }
 }
 
+
 /** Exercise 3 */
 function toggleHolidaysBgColor() {
   let bgColor = 'green';
-  const holidays = document.getElementsByClassName('holiday');
-  const currentBgColor = holidays[0].style.backgroundColor;
+  const currentBgColor = holidayElements[0].style.backgroundColor;
 
-  for (let day of holidays) {
+  for (let day of holidayElements) {
     if (currentBgColor) {
       day.style.removeProperty('background-color');
       day.style.removeProperty('color');
@@ -79,6 +85,7 @@ function toggleHolidaysBgColor() {
   }
 };
 
+
 /** Exercise 4 */
 
 function createBtnFridays(str) {
@@ -86,4 +93,19 @@ function createBtnFridays(str) {
   btn.innerText = str;
   btn.id = 'btn-friday';
   return btn;
+}
+
+
+/** Exercise 5 */
+function toggleFridaysText() {
+  const currentText = fridayElements[0].innerHTML;
+  const newText = '<strong>Sextou!</strong>';
+
+  for (let i = 0; i < fridayElements.length; i++) {
+    if (currentText === newText) {
+      fridayElements[i].innerHTML = fridays[i];
+    } else {
+      fridayElements[i].innerHTML = newText;
+    }
+  }
 }
