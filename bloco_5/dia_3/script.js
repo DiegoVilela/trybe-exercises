@@ -122,6 +122,7 @@ function addEventListenerToAllDays() {
   for (let day of allDays) {
     day.addEventListener('mouseover', zoomIn);
     day.addEventListener('mouseout', zoomOut);
+    day.addEventListener('click', toggleMarkDay);
   }
 }
 
@@ -173,4 +174,29 @@ function addEventListenerToAllTasks() {
   for (let legend of legendElements) {
     legend.addEventListener('click', toggleSelectTask);
   }
+}
+
+
+/** Exercise 10 */
+
+function toggleMarkDay(event) {
+  const taskSelected = document.querySelector('.task.selected');
+
+  if (taskSelected) {
+    const clicked = event.target;
+    const isDayAlreaySelected = Boolean(clicked.style.backgroundColor);
+    const color = taskSelected.style.backgroundColor;
+
+    (isDayAlreaySelected) ? deselectDay(clicked) : selectDay(clicked, color);
+  }
+}
+
+function selectDay(dayElement, bgColor) {
+  dayElement.style.backgroundColor = bgColor;
+  dayElement.style.color = 'white';
+}
+
+function deselectDay(dayElement) {
+  dayElement.style.removeProperty('background-color');
+  dayElement.style.removeProperty('color');
 }
