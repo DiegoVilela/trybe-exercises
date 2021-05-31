@@ -5,12 +5,15 @@ window.onload = () => {
   btnHolidays.addEventListener('click', toggleHolidaysBgColor);
   btnFridays.addEventListener('click', toggleFridaysText);
   addEventListenerToAllDays();
-  addEventListenerToAllTasks();  
+  addEventListenerToAllTasks();
+  btnAdd.addEventListener('click', createAppointment);
+  inputAptmt.addEventListener('keyup', createAppointment);
 }
 
 /** Buttons */
 const btnHolidays = createBtnHolidays('Feriados');
 const btnFridays = createBtnFridays('Sexta-feiras');
+const btnAdd = document.getElementById('btn-add');
 
 /** Days */
 const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
@@ -23,6 +26,8 @@ const fridayElements = document.getElementsByClassName('friday');
 
 const allDays = document.getElementsByClassName('day');
 const tasksContainer = document.getElementsByClassName('my-tasks')[0];
+const appointmentList = document.getElementsByClassName('task-list')[0];
+const inputAptmt = document.getElementById('task-input');
 
 
 function createDaysOfTheWeek() {
@@ -199,4 +204,22 @@ function selectDay(dayElement, bgColor) {
 function deselectDay(dayElement) {
   dayElement.style.removeProperty('background-color');
   dayElement.style.removeProperty('color');
+}
+
+
+/** Bonus */
+
+function createAppointment(event) {
+  // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code
+  if (event.type === 'click' || event.code === 'Enter') {
+
+    if (!inputAptmt.value) return alert('Please, enter a valid text.');
+
+    const li = document.createElement('li');
+    li.innerText = inputAptmt.value;
+    appointmentList.appendChild(li);
+    inputAptmt.value = null;
+    // https://developer.mozilla.org/en-US/docs/Web/API/HTMLOrForeignElement/focus
+    inputAptmt.focus({preventScroll: true});
+  }
 }
