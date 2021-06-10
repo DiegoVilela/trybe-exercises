@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+  <link rel="stylesheet" href="style.css">
   <title>Cadastro de Currículo</title>
 </head>
 <body>
@@ -17,11 +18,14 @@
         </ul>
       </ul>
     </nav>
-    <h1>Cadastre seu Currículo</h1>
+    <h1>Trabalhe Conosco</h1>
   </header>
   <main>
     <section>
       <form novalidate>
+        <header>
+          <h2>Cadastrar Currículo</h2>
+        </header>
         <fieldset>
           <legend>Personal Info</legend>
           <label for="name">Name</label>
@@ -55,6 +59,17 @@
         </fieldset>
         <button type="submit">Send</button>
       </form>
+      <aside id="errors">
+        <h2>Please revise the following requirements and try again:</h2>
+        <ul id="error-list"></ul>
+      </aside>
+      <hr>
+    </section>
+    <section id="result">
+      <header>
+        <h2>Dados Consolidados</h2>
+      </header>
+      <table id="formData"></table>
     </section>
   </main>
   <script src="script.js"></script>
