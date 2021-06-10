@@ -41,6 +41,7 @@ const maxLengths = {
 
 const form = document.forms['cv'];
 const statesEl = form.elements.namedItem('state');
+const beginEl = form.elements.namedItem('begin');
 
 function setStates() {
   for (const state in states) {
@@ -134,5 +135,6 @@ function handleForm(e) {
 
 window.onload = () => {
   setStates();
+  beginEl.DatePickerX.init();
   form.addEventListener('submit', handleForm);
 }
