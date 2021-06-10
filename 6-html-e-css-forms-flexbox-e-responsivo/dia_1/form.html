@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Cadastro de Currículo</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/">Home</a>
+      <ul>
+        <ul>
+          <li><a href="#">About</a></li>
+        </ul>
+      </ul>
+    </nav>
+    <h1>Trabalhe Conosco</h1>
+  </header>
+  <main>
+    <section>
+      <form novalidate>
+        <header>
+          <h2>Cadastrar Currículo</h2>
+        </header>
+        <fieldset>
+          <legend>Personal Info</legend>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" maxlength="40" required>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" maxlength="50" required>
+          <label for="cpf">CPF</label>
+          <input type="text" id="cpf" name="cpf" maxlength="11" required>
+          <label for="address">Address</label>
+          <input type="text" id="address" name="address" maxlength="200" required>
+          <label for="city">City</label>
+          <input type="text" id="city" name="city" maxlength="28" required>
+          <label for="state">State</label>
+          <select name="state" id="state" required></select>
+          <p><strong>Type</strong></p>
+          <input type="radio" name="type" id="type-house" value="house" checked>
+          <label for="type-house">House</label>
+          <input type="radio" name="type" id="type-ap" value="ap">
+          <label for="type-ap">Apartment</label>
+        </fieldset>
+        <fieldset>
+          <legend>Previous Employment</legend>
+          <label for="excerpt">Excerpt</label>
+          <textarea name="excerpt" id="excerpt" cols="30" rows="10" maxlength="1000" required></textarea>
+          <label for="role">Role</label>
+          <input type="text" name="role" id="role" maxlength="40" required>
+          <label for="description">Description</label>
+          <input type="text" name="description" id="description" maxlength="500" required>
+          <label for="begin">Begin</label>
+          <input type="text" name="begin" id="begin">
+        </fieldset>
+        <button type="submit">Send</button>
+      </form>
+      <aside id="errors">
+        <h2>Please revise the following requirements and try again:</h2>
+        <ul id="error-list"></ul>
+      </aside>
+      <hr>
+    </section>
+    <section id="result">
+      <header>
+        <h2>Dados Consolidados</h2>
+      </header>
+      <table id="formData"></table>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>l

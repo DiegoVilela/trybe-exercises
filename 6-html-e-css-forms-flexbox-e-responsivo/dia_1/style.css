@@ -1,0 +1,7 @@
+#errors, #result {
+    display: none;
+}
+
+#errors h2 {
+    color: red;
+}
