@@ -1,0 +1,16 @@
+body {
+    color: #6c757d;
+}
+
+#errors {
+    display: none;
+}
+
+#errors h2 {
+    color: red;
+}
+
+form p {
+    margin-top: 1rem;
+    margin-bottom: 5px;
+}
