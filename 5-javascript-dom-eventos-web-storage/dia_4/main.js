@@ -1,6 +1,6 @@
 window.onload = () => {
   var form = document.querySelector('form');
-  var preferences = JSON.parse(localStorage.getItem('preferences'));
+  var preferences = JSON.parse(localStorage.getItem('preferences')) || {};
 
   if (preferences) {
     applyPreferences(preferences);
