@@ -2,7 +2,7 @@ body {
     color: #6c757d;
 }
 
-#errors, #result {
+#errors {
     display: none;
 }
 
