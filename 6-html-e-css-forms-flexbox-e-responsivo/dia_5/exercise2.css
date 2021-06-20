@@ -1,0 +1,119 @@
+:root {
+  --color: rgb(8, 75, 8);
+  --bg: #eee;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Ubuntu";
+  background-color: var(--bg);
+  color: #333;
+  margin: 15px;
+  line-height: 1.5;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+header > p {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  color: var(--color);
+}
+
+h1, h2, h3, li {
+  color: var(--color);
+}
+
+/* Works as a flex container */
+header > nav > ul {
+  display: flex;
+  flex-flow: column;
+  list-style: none;
+  padding: 0;
+}
+
+header > nav > ul > li {
+  display: flex;
+  width: 100%;
+  padding: 20px 0;
+  justify-content: center;
+  background-color: #ddd;
+  border: 1px solid green;
+}
+
+h1 {
+  font-size: 17px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.aside-one, .aside-two {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    margin: 0 20px;
+  }
+
+  header > p {
+    font-size: 27px;
+    margin: 40px 0;
+    color: var(--color);
+  }
+
+  h1 { 
+    font-size: 27px;
+  }
+
+  header > nav > ul {
+    flex-flow: row;
+  }
+
+  header > nav > ul > li {
+    border: 0;
+    font-weight: bold;
+    font-size: 21px;
+  }
+
+  .aside-one, .aside-two {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  html {
+    margin: auto;
+    width: 60%;
+  }
+
+  header > p {
+    font-size: 43px;
+  }
+
+  h1 { 
+    font-size: 33px;
+  }
+
+  header > nav > ul {
+    flex-flow: row;
+  }
+
+  header > nav > ul > li {
+    border: 0;
+    font-weight: bold;
+  }
+
+  .aside-one, .aside-two {
+    display: flex;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-around;
+  }
+}
