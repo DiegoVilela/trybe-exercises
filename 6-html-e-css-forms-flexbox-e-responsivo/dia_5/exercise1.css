@@ -29,9 +29,18 @@ figure {
   .figures-container {
     display: flex;
     flex-wrap: wrap;
-    margin: auto;
+    justify-content: center;
+    /* margin: auto; */
   }
   figure {
-    flex-basis: 290px;
+    flex-basis: 250px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  body {
+    background-color: lightcyan;
+    font-size: 1.3rem;
+    max-width: 80%;
   }
 }
