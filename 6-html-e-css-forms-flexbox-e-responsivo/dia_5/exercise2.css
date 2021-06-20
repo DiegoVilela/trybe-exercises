@@ -1,11 +1,12 @@
 :root {
   --color: rgb(8, 75, 8);
+  --bg: #eee;
 }
 
 html {
   box-sizing: border-box;
   font-family: "Ubuntu";
-  background-color: #eee;
+  background-color: var(--bg);
   color: #333;
   margin: 15px;
   line-height: 1.5;
@@ -52,4 +53,35 @@ h1 {
 
 .aside-one, .aside-two {
   display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    margin: 0 20px;
+  }
+
+  header > p {
+    font-size: 27px;
+    margin: 40px 0;
+    color: var(--color);
+  }
+
+  h1 { 
+    font-size: 27px;
+  }
+
+  header > nav > ul {
+    flex-flow: row;
+    justify-content: flex-start;
+  }
+
+  header > nav > ul > li {
+    border: 0;
+    font-weight: bold;
+    font-size: 21px;
+  }
+
+  .aside-one, .aside-two {
+    display: block;
+  }
 }
