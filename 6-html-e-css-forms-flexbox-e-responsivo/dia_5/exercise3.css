@@ -95,3 +95,46 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 360px) {
+  #aside {
+    display: none;
+  }
+
+  #navigation > ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #navigation > ul > li {
+    display: flex;
+    width: 100%;
+  }
+
+  #navigation > ul > li > a {
+    display: flex;
+    width: 100%;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  #content {
+    width: 90%;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  #navigation {
+    margin-top: 77px;
+  }
+
+  #header {
+    width: 100%;
+    position: fixed;
+  }
+}
