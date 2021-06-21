@@ -46,8 +46,14 @@ const customerInfo = (order) => {
 console.log(customerInfo(order));
 
 const orderModifier = (order) => {
-  // Adicione abaixo as informações necessárias.
-
+  /** "Olá Luiz Silva, o total do seu pedido de muzzarella, calabresa e Coca-Cola Zero é R$ 50,00."  */
+  Object.assign(order, {
+    name: 'Luiz Silva',
+    payment: {
+      total: 50
+    },
+  });
+  return `Olá, ${order.name}, o total de seu pedido é R$ ${order.payment.total}`
 }
 
-orderModifier(order);
+console.log(orderModifier(order));
