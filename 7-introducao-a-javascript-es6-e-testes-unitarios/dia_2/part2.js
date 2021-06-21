@@ -59,3 +59,8 @@ getValueByNumber = (key, idx) => {
   return Object.values(allLessons[key])[idx];
 }
 console.log(getValueByNumber('lesson1', 0));
+
+verifyPair = (obj, key, value) => {
+  return (obj[key] === value) ? true : false;
+}
+console.log(verifyPair(lesson3, 'turno', 'noite'));
