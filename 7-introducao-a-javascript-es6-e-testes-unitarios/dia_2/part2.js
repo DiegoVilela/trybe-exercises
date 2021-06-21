@@ -64,3 +64,21 @@ verifyPair = (obj, key, value) => {
   return (obj[key] === value) ? true : false;
 }
 console.log(verifyPair(lesson3, 'turno', 'noite'));
+
+countMathStudents = (acc, cur) => (cur.materia === 'Matemática') ? acc + cur.numeroEstudantes : acc;
+watchedMath = (objLessons) => Object.values(objLessons).reduce(countMathStudents, 0);
+console.log(watchedMath(allLessons));
+
+createReport = (objLessons, teacher) => {
+  const aulas = [];
+  let estudantes = 0;
+  const lessonList = Object.values(objLessons);
+  for (const lesson of lessonList) {
+    if (lesson.professor === teacher) {
+      aulas.push(lesson.materia);
+      estudantes += lesson.numeroEstudantes;
+    }
+  }
+  return `\nprofessor(a): ${teacher}\naulas: [ ${aulas} ]\nestudantes: ${estudantes}`;
+}
+console.log(createReport(allLessons, 'Maria Clara'))
