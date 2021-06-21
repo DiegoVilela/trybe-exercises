@@ -54,3 +54,8 @@ studentTotal = objLessons => {
   return Object.values(objLessons).reduce((acc, cur) => acc + cur.numeroEstudantes, 0);
 }
 console.log(studentTotal(allLessons));
+
+getValueByNumber = (key, idx) => {
+  return Object.values(allLessons[key])[idx];
+}
+console.log(getValueByNumber('lesson1', 0));
