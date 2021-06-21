@@ -23,3 +23,8 @@ add = (obj, key, value) => {
 }
 add(lesson2, 'turno', 'manhã');
 console.table(lesson2);
+
+listKeys = (obj) => {
+  Object.keys(obj).forEach(value => console.log(value));
+}
+listKeys(lesson3);
