@@ -41,3 +41,11 @@ listValues = (obj) => {
   Object.values(obj).forEach(value => console.log(value));
 }
 listValues(lesson3);
+
+allLessons = {}
+Object.assign(allLessons, {
+  lesson1: lesson1,
+  lesson2: lesson2,
+  lesson3: lesson3,
+});
+console.log(allLessons);
