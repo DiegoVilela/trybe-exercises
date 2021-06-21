@@ -28,3 +28,11 @@ listKeys = (obj) => {
   Object.keys(obj).forEach(value => console.log(value));
 }
 listKeys(lesson3);
+
+size = obj => {
+  let size = 0;
+  for (const key in obj) if (obj.hasOwnProperty(key)) size += 1;
+
+  return size;
+}
+console.log(size(lesson1));
