@@ -36,3 +36,8 @@ size = obj => {
   return size;
 }
 console.log(size(lesson1));
+
+listValues = (obj) => {
+  Object.values(obj).forEach(value => console.log(value));
+}
+listValues(lesson3);
