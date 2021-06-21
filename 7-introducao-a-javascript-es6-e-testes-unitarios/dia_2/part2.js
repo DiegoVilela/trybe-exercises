@@ -49,3 +49,8 @@ Object.assign(allLessons, {
   lesson3: lesson3,
 });
 console.log(allLessons);
+
+studentTotal = objLessons => {
+  return Object.values(objLessons).reduce((acc, cur) => acc + cur.numeroEstudantes, 0);
+}
+console.log(studentTotal(allLessons));
