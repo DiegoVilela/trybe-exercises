@@ -7,10 +7,6 @@ const notUnique = (book) => {
   return books.some((b) => (b.author.birthYear === book.author.birthYear) && (b.id !== book.id))
 }
 
-function authorUnique() {
-  for (const currentBook of books) if (notUnique(currentBook)) return false;
-
-  return true;
-}
+const authorUnique = () => (books.some((book) => notUnique(book))) ? false : true;
 
 assert.strictEqual(authorUnique(), expectedResult);
