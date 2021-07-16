@@ -1,7 +1,4 @@
-const { expect } = require('@jest/globals');
 const { users, findUserById, getUserName } = require('./main');
-
-console.log(users, findUserById, getUserName);
 
 findUserById(5).then((user) => console.log(user));
 
