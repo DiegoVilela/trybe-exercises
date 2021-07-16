@@ -2,18 +2,21 @@ const { users, findUserById, getUserName } = require('./main');
 
 describe('Testing findUserById using promise sintaxe', () => {
   describe('When the `id` exists', () => {
-    it('should return the `user` object', () => {
+    it('should return the `user` object', async () => {
+      const user = await findUserById(5);
       const expected = { name: 'Paul' };
-      expect.assertions(1);
-      return expect(findUserById(5)).resolves.toEqual(expected);
+      expect(user).toEqual(expected);
     });
   });
 
   describe('When the `id` does not exist', () => {
-    it('should return an object with an `error` key', () => {
+    it('should return an object with an `error` key', async () => {
       const expected = { error: 'User with id 7 not found.' };
-      expect.assertions(1);
-      return expect(findUserById(7)).rejects.toEqual(expected);
+      try {
+        await findUserById(7);
+      } catch (e) {
+        expect(e).toEqual(expected);  
+      }
     });
   });
 });
