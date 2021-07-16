@@ -5,11 +5,11 @@ const users = {
 
 const findUserById = (id) => {
   return new Promise((resolve, reject) => {
-      if (users[id]) {
-        return resolve(users[id]);
-      };
+    if (users[id]) {
+      return resolve(users[id]);
+    };
 
-      return reject({ error: `User with id ${id} not found.` });
+    return reject({ error: `User with id ${id} not found.` });
   });
 };
 
