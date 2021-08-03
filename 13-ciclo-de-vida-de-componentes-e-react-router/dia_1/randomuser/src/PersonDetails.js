@@ -17,12 +17,30 @@ class PersonDetails extends Component {
     const data = await response.json();
 
     this.setState({
-      person: data.results[0],
+      person: this.getUserObj(data.results[0]),
     });
   }
 
+  getUserObj(user) {
+    return {
+      name: `${user.name.first} ${user.name.last}`,
+      email: user.email,
+      age: user.dob.age,
+      image: user.picture.thumbnail,
+    };
+  }
+
   render() {
-    return <h1>{this.state.person.email}</h1>
+    const { person: { name, email, age, image } } = this.state;
+
+    return(
+      <div>
+        <p>{ name }</p>
+        <p>{ email }</p>
+        <p>{ age }</p>
+        <img src={ image} alt={ name } />
+      </div>
+    );
   }
 }
 
