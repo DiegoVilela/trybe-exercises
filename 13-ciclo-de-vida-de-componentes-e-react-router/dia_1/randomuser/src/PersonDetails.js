@@ -18,6 +18,7 @@ class PersonDetails extends Component {
 
     this.setState({
       person: this.getUserObj(data.results[0]),
+      loading: false,
     });
   }
 
@@ -30,8 +31,12 @@ class PersonDetails extends Component {
     };
   }
 
+  showLoading = () => <div>Loading...</div>;
+
   render() {
-    const { person: { name, email, age, image } } = this.state;
+    const { person: { name, email, age, image }, loading } = this.state;
+
+    if (loading) return this.showLoading();
 
     return(
       <div>
