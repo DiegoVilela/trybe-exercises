@@ -12,7 +12,6 @@ class PersonDetails extends Component {
 
   async componentDidMount() {
     const endpoint = 'https://api.randomuser.me/';
-
     const response = await fetch(endpoint);
     const data = await response.json();
 
@@ -20,6 +19,13 @@ class PersonDetails extends Component {
       person: this.getUserObj(data.results[0]),
       loading: false,
     });
+  }
+
+  shouldComponentUpdate(_nextProps, nextState) {
+    console.log("nextState", nextState);
+
+    const AGE = 50;
+    return nextState.person.age < AGE;
   }
 
   getUserObj(user) {
