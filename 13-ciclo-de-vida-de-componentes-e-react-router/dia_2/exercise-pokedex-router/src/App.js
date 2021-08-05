@@ -10,8 +10,11 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route to="/" render={ () => <Pokedex pokemons={pokemons} /> } />
-          <Route to="/pokemon/:id" render={ (props) => <PokemonDetails {...props} /> } />
+          <Route
+            path="/pokemon/:id"
+            render={ ({ match }) => <PokemonDetails match={ match } pokemons={ pokemons } /> }
+          />
+          <Route exact path="/" render={ () => <Pokedex pokemons={pokemons} /> } />
         </Switch>
       </BrowserRouter>
     </div>
