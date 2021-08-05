@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NotFound from './NotFound';
 
 class PokemonDetails extends Component {
   getPokemonById(id, pokemons) {
@@ -12,15 +13,18 @@ class PokemonDetails extends Component {
   }
 
   render() {
-    console.log('rendered!');
     const { match: { params: { id } }, pokemons } = this.props;
+    const pokemon = this.getPokemonById(id, pokemons);
+
+    if (!pokemon) return <NotFound />
+
     const {
       name,
       type,
       averageWeight: { value, measurementUnit },
       summary,
       foundAt,
-    } = this.getPokemonById(id, pokemons);
+    } = pokemon;
 
     return(
       <div>

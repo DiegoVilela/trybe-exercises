@@ -5,6 +5,7 @@ import PokemonDetails from './PokemonDetails';
 import './App.css';
 import pokemons from './data';
 import About from './About';
+import NotFound from './NotFound';
 
 function App() {
   return (
@@ -16,14 +17,14 @@ function App() {
             <li><Link to="/about">About</Link></li>
           </ul>
         </nav>
-        
           <Switch>
+            <Route exact path="/" render={ () => <Pokedex pokemons={pokemons} /> } />
             <Route
               path="/pokemon/:id"
               render={ ({ match }) => <PokemonDetails match={ match } pokemons={ pokemons } /> }
             />
             <Route path="/about" component={ About } />
-            <Route exact path="/" render={ () => <Pokedex pokemons={pokemons} /> } />
+            <Route component={ NotFound } />
           </Switch>
       </div>
     </BrowserRouter>
